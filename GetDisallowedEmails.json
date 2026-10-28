@@ -1,0 +1,26 @@
+<?php
+
+//The purpose of this web service file is to return json object containing the following 5 elements:
+//VersionNumber = a single string containing the assembly version (4 numbers) of the latest downloadable installer for Excel 32 bit.
+//VersionUrl = the full url referring to the location of the installer executable file at server
+//VersionFile = the name of the installer file with the extension but without the path
+//VersionArchiveUrl = the full url referring to the location of the installer archive file at server
+//VersionArchiveFile = the name of the installer archive file with the extension but without the path
+
+//**********************  IMPORTANT  ************************************
+//The url of this file as well as the strings VersionNumber , VersionUrl, VersionFile used in the output below should never change!!!
+//The client relies on these 4 facts in order to extract the required information.
+//Anything else, for example the location of the installer file, its name or the format of its version number, may change, provided 
+//the script here will be adjusted to reflect the changes.
+//***********************************************************************
+
+header('Content-type: application/json');
+require 'PhpFunctions.php';
+
+$res = [
+	"xyz@company.com" => 0,
+	"abc@other.de" => 0
+];
+
+echo json_encode($res);
+?>
